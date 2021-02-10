@@ -49,7 +49,6 @@
         <configuration>
             <simulationsFolder>src/test/java</simulationsFolder>
             <includes>
-                <include>pets.UserSimulation</include>
 
             </includes>
         </configuration>
