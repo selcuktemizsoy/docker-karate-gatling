@@ -4,16 +4,24 @@ This is base Karate-Gatling performance testing suite.
 
 <h2>Environment</h2>
 * IntelliJ IDE
+
 * Installed Java at least 8
+
 * Scala latest version
+
 * Karate and gatling dependency
 
 
 <h2>Installation</h2>
+
 1. Install Java at least version 8
+
 2. Install IntelliJ (community version is enough)
+
 3. Create new Maven project
+
 4. Open pom.xml file and add below dependency
+
     ```
         <dependency>
             <groupId>com.intuit.karate</groupId>
@@ -69,6 +77,7 @@ your performance testing class you can remove executions phase.
                 </plugin>
             </plugins>
     ```   
+
 7. Sync pom.xml
 
 8. Add scala plugin to your IDE
@@ -76,6 +85,7 @@ your performance testing class you can remove executions phase.
 9. Right Click project name and add framework support, choose scala and select latest version
 
 10. Create your package structure like that. 
+
     ```
     -src
         -test
@@ -88,11 +98,13 @@ your performance testing class you can remove executions phase.
                     -somefeaturefile.feature
    
     ```
+
 11. Create your scenarios that you want to run
 
 12. Under the features create new scala class name is UserSimulation or anyother thing
  
 13. Extends simulation class and define required variables. You can define protocols as required. For more info refer this https://github.com/intuit/karate/tree/master/karate-gatling#karateprotocol
+
     ```Scala
     class UserSimulation extends Simulation{
       
@@ -105,6 +117,7 @@ your performance testing class you can remove executions phase.
       )
     }
     ```
+
 14. Run your code with
 
     `mvn test` 
