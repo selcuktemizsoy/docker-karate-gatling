@@ -3,6 +3,7 @@
 This is base Karate-Gatling performance testing suite. 
 
 <h2>Environment</h2>
+
 * IntelliJ IDE
 
 * Installed Java at least 8
