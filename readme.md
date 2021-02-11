@@ -118,10 +118,8 @@ your performance testing class you can remove executions phase.
     }
     ```
 
-14. Run your code with
+14. Run your code with `mvn test` if you have added execution phases. 
+If not you can run your test with this command 
 
-    `mvn test` 
+`mvn clean test-compile gatling:test`
 
- if you have added execution phases. If not you can run your test with this command 
-   
-    `mvn clean test-compile gatling:test`
