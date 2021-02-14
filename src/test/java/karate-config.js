@@ -9,6 +9,7 @@ function fn() {
     appSecret: 'my.secret',
     baseUrl: 'https://petstore.swagger.io/v2',
     anotherUrlBase: 'https://another-host.com/v1/'
+
   };
   if (env == 'stage') {
     // over-ride only those that need to be
