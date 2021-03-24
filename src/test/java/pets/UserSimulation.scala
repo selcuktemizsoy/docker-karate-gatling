@@ -13,7 +13,7 @@ class UserSimulation extends Simulation{
     "/pets" -> pauseFor("get" -> 0, "post" -> 0)
   )
   setUp(
-    getSingleUser.inject(rampUsers(50) during(10 seconds)).protocols(protocol),
-   postSingleUser.inject(rampUsers(50) during(10 seconds)).protocols(protocol)
+    getSingleUser.inject(rampUsers(5) during(10 seconds)).protocols(protocol),
+    postSingleUser.inject(rampUsers(5) during(10 seconds)).protocols(protocol)
   )
 }
