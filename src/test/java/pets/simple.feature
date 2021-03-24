@@ -6,4 +6,5 @@ Feature: simple get request
     * path 'pet', 250
     When method GET
     Then status 200
+    Then match response.id == 250
 

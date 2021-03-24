@@ -27,7 +27,7 @@
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-gatling</artifactId>
             <version>1.0.0</version>
-            <scope>test</scope>
+
         </dependency>
 
 
@@ -45,6 +45,11 @@
             </testResource>
         </testResources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+            </plugin>
 
             <plugin>
                 <groupId>io.gatling</groupId>
