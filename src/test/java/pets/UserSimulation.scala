@@ -6,6 +6,7 @@ import io.gatling.core.Predef.{Simulation, atOnceUsers, openInjectionProfileFact
 import scala.concurrent.duration.DurationInt
 
 class UserSimulation extends Simulation{
+
   val getSingleUser = scenario("simple get").exec(karateFeature("classpath:pets/simple.feature"))
   val postSingleUser = scenario("basic post").exec(karateFeature("classpath:pets/Postfeature.feature@name=post"))
   val protocol = karateProtocol(

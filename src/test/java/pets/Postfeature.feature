@@ -6,8 +6,8 @@ Feature: it is for creating pet in the API
   Scenario: post the pets
     * def pet = read('classpath:data/data.json')
     * set pet.id = 250
-    * request pet2
+    * print id
+    * request pet
     * path 'pet'
     When method POST
-    * print response
-    Then status 200
+    Then print response
