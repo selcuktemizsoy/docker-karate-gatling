@@ -4,7 +4,7 @@ import com.intuit.karate.gatling.GatlingMavenJobConfig;
 import com.intuit.karate.job.JobManager;
 import org.junit.jupiter.api.Test;
 
-public class JnekinsJobRunner {
+public class JenkinsJobRunner {
 
     @Test
     void testAll() {
