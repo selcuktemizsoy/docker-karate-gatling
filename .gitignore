@@ -2,5 +2,4 @@
 *.iml
 /target
 *.vagrant/
-/Dockerfile
 /local-setup/
