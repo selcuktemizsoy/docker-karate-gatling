@@ -58,7 +58,7 @@ pipeline {
             )
             zip zipFile: "target.zip", archive: false, dir: "target", glob: "karate-reports *//** /* *//*,** /* *//*.log"
             archiveArtifacts "target.zip"
-        } */
-    }
+        }
+    }*/
 }
 
