@@ -1,4 +1,6 @@
-
+node {
+    karateWorker = "docker run -d --network=karate --rm --cap-add=SYS_ADMIN -e KARATE_JOBURL=http://karate:9080 karate"
+}
 
 pipeline {
     agent {
@@ -59,7 +61,4 @@ pipeline {
         }
     }
 }
-/*
-node {
-    karateWorker = "docker run -d --network=karate --rm --cap-add=SYS_ADMIN -e KARATE_JOBURL=http://karate:9080 karate"
-}*/
+
