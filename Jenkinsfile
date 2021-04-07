@@ -8,6 +8,7 @@ pipeline {
                    label "${config.pod_label}"
                    yamlFile 'KubernetesPods.yaml'
               }
+    }
     stages {
         stage('Docker Build') {
             steps {
