@@ -3,7 +3,12 @@ node {
 }
 
 pipeline {
-    agent any
+    agent {
+                  kubernetes {
+                      label "${config.pod_label}"
+                      yamlFile 'KubernetesPods.yaml'
+                  }
+              }
     stages {
         stage('Docker Build') {
             steps {
