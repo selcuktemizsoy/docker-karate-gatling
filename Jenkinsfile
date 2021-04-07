@@ -8,8 +8,8 @@ pipeline {
         stage('Docker Build') {
             steps {
                 container('docker') {
-                     sh "docker rm  loadtest:v10 || true"
-                     sh "docker network create  loadtest:v10 || true"
+                   //  sh "docker rm  loadtest:v10 || true"
+                   //  sh "docker network create  loadtest:v10 || true"
                      sh "docker run  -d   loadtest:v10"
                 }
             }
