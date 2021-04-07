@@ -45,7 +45,7 @@ public class DockerRunner {
             temp[0] = temp[0].replace("\"", "\\\"");
             temp[1] = temp[1].replace("\"", "\\\"");
 
-            System.out.println("\"" + temp[0] + "\":\"" + temp[1].substring(1) + "\"");
+            System.out.println("\"" + temp[0] + "\"->\"" + temp[1].substring(1) + "\"");
 
 
         }
