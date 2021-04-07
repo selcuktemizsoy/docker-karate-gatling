@@ -9,3 +9,9 @@ Feature: it is for creating pet in the API
     * request pet
     * path 'pet'
     When method POST
+
+    Scenario Outline: js functions example
+      * print email
+      Examples:
+        | i => i > 2 ?  : ({email: `test_${i}@user.com`}) |
+

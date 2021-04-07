@@ -36,12 +36,9 @@
             <version>1.0.0</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
 
     <build>
-
         <testResources>
             <testResource>
                 <directory>src/test/java</directory>
