@@ -1,3 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo testtest'
+
+            }
+        }
+    }
+}
+
+/*
 node {
     karateWorker = "docker run -d --network=karate --rm --cap-add=SYS_ADMIN -e KARATE_JOBURL=http://karate:9080 karate"
 }
@@ -45,7 +59,9 @@ pipeline {
             container('docker') {
                 sh "docker cp karate:/src/target ."
             }
-            junit "target/karate-reports *//*.xml"
+            junit "target/karate-reports *//*
+ */
+/*.xml"
             publishHTML(
                 target: [
                     allowMissing: false,
@@ -56,9 +72,18 @@ pipeline {
                     reportName: "Karate Summary"
                 ]
             )
-            zip zipFile: "target.zip", archive: false, dir: "target", glob: "karate-reports *//** /* *//*,** /* *//*.log"
+            zip zipFile: "target.zip", archive: false, dir: "target", glob: "karate-reports *//*
+ */
+/**  */
+/* *//*
+ */
+/*,**  */
+/* *//*
+ */
+/*.log"
             archiveArtifacts "target.zip"
         }
     }
 }
 
+ */
