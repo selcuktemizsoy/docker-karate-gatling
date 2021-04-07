@@ -10,7 +10,7 @@ pipeline {
                 container('docker') {
                      sh "docker rm  loadtest:v10 || true"
                      sh "docker network create  loadtest:v10 || true"
-                     sh "sudo docker run  -d   loadtest:v10"
+                     sh "docker run  -d   loadtest:v10"
                 }
             }
         }
