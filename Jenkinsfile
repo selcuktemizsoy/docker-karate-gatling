@@ -8,9 +8,9 @@ pipeline {
         stage('Docker Build') {
             steps {
                 container('docker') {
-                    sh "docker rm karate || true"
-                    sh "docker network create karate || true"
-                    sh "docker build --pull -t karate ."
+                     sh "docker rm  loadtest:v10 || true"
+                     sh "docker network create  loadtest:v10 || true"
+                     sh "sudo docker run  -d   loadtest:v10"
                 }
             }
         }
