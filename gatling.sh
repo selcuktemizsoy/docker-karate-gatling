@@ -12,11 +12,12 @@
 USER_NAME='vagrant'
 
 #Remote hosts list
-HOSTS=( 192.168.46.188 192.168.46.189)
+HOSTS=( 192.168.46.188)
 
 #Assuming all Gatling installation in same path (with write permissions)
-GATLING_HOME=/gatling/gatling-charts-highcharts-bundle-3.5.1
-GATLING_SIMULATIONS_DIR=$GATLING_HOME/user-files/untitled-folder/src/test/java/pets
+GATLING_HOME=/home/vagrant/gatling-charts-highcharts-bundle-3.5.1
+GATLING_SIMULATIONS_DIR=$GATLING_HOME/user-files
+GATLING_SIMULATIONS_DIR1=/Users/selcuktemizsoy/Desktop/works/untitled folder/
 GATLING_RUNNER=$GATLING_HOME/bin/gatling.sh
 
 #Change to your simulation class name
@@ -41,8 +42,8 @@ done
 
 for HOST in "${HOSTS[@]}"
 do
-  echo "Copying simulations to host: $HOST"
-  scp -i local-setup/id_rsa -r $GATLING_SIMULATIONS_DIR/* $USER_NAME@$HOST:$GATLING_SIMULATIONS_DIR
+  echo "Copying simulations to host: $HOST $GATLING_SIMULATIONS_DIR1"
+  scp -i local-setup/id_rsa -r $GATLING_SIMULATIONS_DIR1/* $USER_NAME@$HOST:$GATLING_SIMULATIONS_DIR
 done
 
 for HOST in "${HOSTS[@]}"
