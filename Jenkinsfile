@@ -1,6 +1,6 @@
-node {
+/*  node {
     karateWorker = "docker run -d --network=karate --rm --cap-add=SYS_ADMIN -e KARATE_JOBURL=http://karate:9080 karate"
-}
+} */
 
 pipeline {
     agent any
@@ -8,9 +8,9 @@ pipeline {
         stage('Docker Build') {
             steps {
                 container('docker') {
-                   //  sh "docker rm  loadtest:v10 || true"
-                   //  sh "docker network create  loadtest:v10 || true"
-                     sh "docker run  -d   loadtest:v10"
+                     sh "docker rm  karate || true"
+                     sh "docker network create  karate || true"
+                     sh "docker run  -d karate"
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
                         }
                     }
                 }
-                stage('Workers') {
+               /*  stage('Workers') {
                     steps {
                         container('docker') {
                             sh karateWorker
@@ -31,7 +31,7 @@ pipeline {
                             sh karateWorker
                         }
                     }
-                }
+                } */
             }
         }
     }
