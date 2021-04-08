@@ -1,21 +1,26 @@
 package pets
 
 import com.intuit.karate.gatling.PreDef._
-import io.gatling.core.Predef.{Simulation, atOnceUsers, openInjectionProfileFactory, rampUsers, scenario}
+import io.gatling.core.Predef.{Simulation, constantUsersPerSec, openInjectionProfileFactory, rampUsers, scenario}
 
 import scala.concurrent.duration.DurationInt
 
 class UserSimulation extends Simulation{
-
+  val protocol = {
+    karateProtocol()
+  }
+  val feature = System.getProperty("feature")
+  val user = System.getProperty("user")
   val getSingleUser = scenario("simple get").exec(karateFeature("classpath:pets/simple.feature"))
-  val postSingleUser = scenario("basic post").exec(karateFeature("classpath:pets/Postfeature.feature@name=post"))
+  val postSingleUser = scenario("basic post").exec(karateFeature("classpath:pets/" + feature))
  /* val protocol = karateProtocol(
 
     "/pets" -> pauseFor("get" -> 0, "post" -> 0)
   */
   setUp(
   //  getSingleUser.inject(rampUsers(5) during(10 seconds))//.protocols(protocol)
-    postSingleUser.inject(rampUsers(5) during(60 seconds))//.protocols(protocol)
+    postSingleUser.inject(rampUsers(user.toInt) during(2 seconds),
+      constantUsersPerSec(user.toInt) during(4 seconds)).protocols(protocol)
   )
 
 

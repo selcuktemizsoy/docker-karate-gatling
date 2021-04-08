@@ -18,6 +18,10 @@ function fn() {
     config.baseUrl = 'https://e2e-host/v1/auth';
   }
   // don't waste time waiting for a connection or if servers don't respond within 5 seconds
+ var result = karate.callSingle('classpath:pets/simple.feature',config);
+  var result2 = karate.callSingle('classpath:pets/simple.feature',config);
+
+
   karate.configure('connectTimeout', 5000);
   karate.configure('readTimeout', 5000);
   return config;
