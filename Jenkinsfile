@@ -3,12 +3,7 @@ node {
 }
 
 pipeline {
-    agent {
-            kubernetes {
-                  label "${config.pod_label}"
-                  yamlFile 'KubernetesPods.yaml'
-            }
-    }
+    agent any
 
     stages {
         stage('Docker Build') {
@@ -41,7 +36,7 @@ pipeline {
             }
         }
     }
- /*     post {
+      post {
         always {
             container('docker') {
                 sh "docker cp karate:/src/target ."
@@ -60,6 +55,6 @@ pipeline {
             zip zipFile: "target.zip", archive: false, dir: "target", glob: "karate-reports *//*  *//**  *//* *//*  *//*,**  *//* *//*  *//*.log"
             archiveArtifacts "target.zip"
         }
-    } */
+    }
 }
 
