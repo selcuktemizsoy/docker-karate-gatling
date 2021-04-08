@@ -41,12 +41,12 @@ pipeline {
             }
         }
     }
-     post {
+ /*     post {
         always {
             container('docker') {
                 sh "docker cp karate:/src/target ."
             }
-            junit "target/karate-reports *//*.xml"
+            junit "target/karate-reports *//*  *//*.xml"
             publishHTML(
                 target: [
                     allowMissing: false,
@@ -57,9 +57,9 @@ pipeline {
                     reportName: "Karate Summary"
                 ]
             )
-            zip zipFile: "target.zip", archive: false, dir: "target", glob: "karate-reports *//** /* *//*,** /* *//*.log"
+            zip zipFile: "target.zip", archive: false, dir: "target", glob: "karate-reports *//*  *//**  *//* *//*  *//*,**  *//* *//*  *//*.log"
             archiveArtifacts "target.zip"
         }
-    }
+    } */
 }
 
