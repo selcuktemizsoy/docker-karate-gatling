@@ -12,8 +12,8 @@ class UserSimulation extends Simulation{
   val protocol = karateProtocol()
 
   setUp(
-    getSingleUser.inject(rampUsers(5) during(5 seconds)).protocols(protocol),
-    postSingleUser.inject(rampUsers(5) during(5 seconds)).protocols(protocol)
+    getSingleUser.inject(rampUsers(100) during(60 seconds)).protocols(protocol),
+    postSingleUser.inject(rampUsers(100) during(60 seconds)).protocols(protocol)
   )
 
 
