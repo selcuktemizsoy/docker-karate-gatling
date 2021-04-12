@@ -55,4 +55,4 @@ ARG SHA=c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe
 
 
 
-CMD ["mvn","clean","test-compile","gatling:test","-DsimulationClass=UserSimulation"]
+CMD ["mvn","clean","test-compile","gatling:test", "-Dgatling.simulationClass=pets.UserSimulation"]
