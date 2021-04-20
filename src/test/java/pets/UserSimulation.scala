@@ -14,7 +14,7 @@ class UserSimulation extends Simulation{
 
   setUp(
     getSingleUser.inject(rampUsers(userCount.toInt) during(10 seconds)).protocols(protocol),
-    postSingleUser.inject(rampUsers(100) during(10 seconds)).protocols(protocol)
+    postSingleUser.inject(rampUsers(10) during(10 seconds)).protocols(protocol)
   )
 
 
