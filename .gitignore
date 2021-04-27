@@ -3,4 +3,4 @@
 /target
 *.vagrant/
 /local-setup/
-/gatling.sh
+/run.sh
