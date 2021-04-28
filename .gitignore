@@ -4,3 +4,4 @@
 *.vagrant/
 /local-setup/
 /run.sh
+.ssh/
