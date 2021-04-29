@@ -13,8 +13,8 @@ class UserSimulation extends Simulation{
   val userCount = System.getProperty("userCount")
 
   setUp(
-    getSingleUser.inject(constantUsersPerSec(userCount.toInt) during(2 minutes)).protocols(protocol),
-    postSingleUser.inject(constantUsersPerSec(userCount.toInt) during(2 minutes)).protocols(protocol)
+    getSingleUser.inject(constantUsersPerSec(userCount.toInt) during(50 seconds)).protocols(protocol),
+    postSingleUser.inject(constantUsersPerSec(userCount.toInt) during(50 seconds)).protocols(protocol)
   )
 
 
