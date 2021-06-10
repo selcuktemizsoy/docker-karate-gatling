@@ -9,6 +9,7 @@ Feature: it is for creating pet in the API
     * request pet
     * path 'pet'
     When method POST
+    * karate.log("myt log")
     Then status 200
 
 

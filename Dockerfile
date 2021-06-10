@@ -24,4 +24,4 @@ WORKDIR ./docker-karate-gatling
 
 RUN mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.1:go-offline
 
-CMD mvn clean test-compile gatling:test -Dgatling.simulationClass=pets.UserSimulation -DuserCount=${COUNT} -Dscenario=${SCENARIO} ; cd target ; export DATE=$(date "+%Y-%m-%d-%H:%M:%S:%s") ; mv karate.log karate-${DATE}.log ; ls ; aws s3 cp *.log s3://${BUCKET}/karate-logs/ ; cd gatling/usersimulation-* ;  mv simulation.log simulation-${DATE}.log ; ls ; aws s3 cp *.log s3://${BUCKET}/logs/
+CMD mvn clean test-compile gatling:test -Dgatling.simulationClass=pets.UserSimulation ; cd target ; export DATE=$(date "+%Y-%m-%d-%H:%M:%S:%s") ; export hos="$(hostname)" ; mv karate.log karate-${DATE}-${RANDOM}-${hos}.log ; ls ; aws s3 cp *.log s3://${BUCKET}/karate-logs/ ; cd gatling/usersimulation-* ; hostname ;  mv simulation.log simulation-${DATE}-${RANDOM}-${hos}.log ; ls ; aws s3 cp *.log s3://${BUCKET}/logs/

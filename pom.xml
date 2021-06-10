@@ -16,11 +16,12 @@
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/com.intuit.karate/karate-core -->
-        <dependency>
+      <!--  <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-core</artifactId>
             <version>1.0.0</version>
-        </dependency>
+            <scope>test</scope>
+        </dependency>-->
 
 
         <dependency>
@@ -30,12 +31,12 @@
 
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.intuit.karate/karate-junit4 -->
-        <dependency>
+   <!--     <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-junit4</artifactId>
             <version>1.0.0</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
 
 
     </dependencies>
@@ -72,7 +73,19 @@
                 </configuration>
 
             </plugin>
-
+       <!--     <plugin>
+                <groupId>io.gatling.frontline</groupId>
+                <artifactId>frontline-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+-->
         </plugins>
     </build>
 </project>
