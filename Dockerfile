@@ -1,6 +1,6 @@
 FROM maven:3.6.0-jdk-8-alpine
 
-ARG CLASS_NAME
+ARG CLASS
 ARG BUCKET
 
 
@@ -23,4 +23,4 @@ WORKDIR ./docker-karate-gatling
 
 RUN mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.1:go-offline
 
-CMD mvn clean test-compile gatling:test -Dgatling.simulationClass=${CLASS_NAME} ; cd target ; export DATE=$(date "+%Y-%m-%d-%H:%M:%S:%s") ; export host="$(hostname)" ; mv karate.log karate-${DATE}-${RANDOM}-${host}.log ; ls ; aws s3 cp *.log s3://${BUCKET}/karate-logs/ ; cd gatling/usersimulation-* ; hostname ;  mv simulation.log simulation-${DATE}-${RANDOM}-${host}.log ; ls ; aws s3 cp *.log s3://${BUCKET}/logs/
+CMD mvn clean test-compile gatling:test -Dgatling.simulationClass=${CLASS} ; cd target ; export DATE=$(date "+%Y-%m-%d-%H:%M:%S:%s") ; export host="$(hostname)" ; mv karate.log karate-${DATE}-${RANDOM}-${host}.log ; ls ; aws s3 cp *.log s3://${BUCKET}/karate-logs/ ; cd gatling/usersimulation-* ; hostname ;  mv simulation.log simulation-${DATE}-${RANDOM}-${host}.log ; ls ; aws s3 cp *.log s3://${BUCKET}/logs/
