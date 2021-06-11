@@ -8,12 +8,12 @@ Feature: simple get request
     When method GET
 
 
-  Scenario: basic
+  Scenario: basic 2
     * path 'pet', 251
     When method GET
 
 
 
-  Scenario: basic
+  Scenario: basic 323
     * path 'pet', 252
     When method GET
