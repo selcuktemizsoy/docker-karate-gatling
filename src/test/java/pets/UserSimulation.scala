@@ -13,8 +13,8 @@ class UserSimulation extends Simulation{
 
 
   setUp(
-    getSingleUser.inject(constantUsersPerSec(10) during(20 seconds)).protocols(protocol),
-    postSingleUser.inject(constantUsersPerSec(10) during(20 seconds)).protocols(protocol)
+    getSingleUser.inject(constantUsersPerSec(100) during(300 seconds)).protocols(protocol),
+    postSingleUser.inject(constantUsersPerSec(100) during(300 seconds)).protocols(protocol)
   )
 
 
